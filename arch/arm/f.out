@@ -1,0 +1,19 @@
+       section data
+       section data
+       section code
+       global main
+       type main func
+ main:
+       push LR, R11
+       mov R11, SP
+       sub SP, SP, 8
+ main_block0:
+       mov R0, 10
+       add R0, R0, 2
+       str R0, [R11, -4]
+       ldr R0, [R11, #-4]
+       b main_epilog
+ main_epilog:
+       add SP, SP, 8
+       pop PC, R11
+       ALIGN(4)

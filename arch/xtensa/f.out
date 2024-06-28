@@ -1,0 +1,60 @@
+{
+  "arch": "xtensa",
+  "images": [],
+  "relocations": [
+    {
+      "addend": "0x0",
+      "offset": "0x36",
+      "section": "code",
+      "symbol_id": 2,
+      "type": "call18"
+    }
+  ],
+  "sections": [
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": "",
+      "name": "data"
+    },
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": [
+        "12c1fc02610012c1fcf2610010f12012c1f832cffc22a00a22630022cffc",
+        "22220032cff822c21422630022cff822220022cffc22220006000012c108",
+        "f2210012c10402210012c104800000"
+      ],
+      "name": "code"
+    }
+  ],
+  "symbols": [
+    {
+      "binding": "global",
+      "id": 0,
+      "name": "main",
+      "section": "code",
+      "size": 0,
+      "typ": "func",
+      "value": "0x0"
+    },
+    {
+      "binding": "local",
+      "id": 1,
+      "name": "main_block0",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x12"
+    },
+    {
+      "binding": "local",
+      "id": 2,
+      "name": "main_epilog",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x39"
+    }
+  ]
+}

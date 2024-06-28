@@ -1,0 +1,72 @@
+{
+  "arch": "xtensa",
+  "images": [],
+  "relocations": [
+
+  ],
+  "sections": [
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": "",
+      "name": "data"
+    },
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": [
+        "04120512318004003041b1400a000000144100003540050005940038003c",
+        "3c400000003c144100003450140081440200144102001c410000003c3150",
+        "0400354134413041"
+      ],
+      "name": "code"
+    }
+  ],
+  "symbols": [
+    {
+      "binding": "global",
+      "id": 0,
+      "name": "main",
+      "section": "code",
+      "size": 0,
+      "typ": "func",
+      "value": "0x0"
+    },
+    {
+      "binding": "local",
+      "id": 1,
+      "name": "main_block0",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0xa"
+    },
+    {
+      "binding": "local",
+      "id": 2,
+      "name": "main_block2",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x24"
+    },
+    {
+      "binding": "local",
+      "id": 3,
+      "name": "main_block1",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x1e"
+    },
+    {
+      "binding": "local",
+      "id": 4,
+      "name": "main_epilog",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x3a"
+    }
+  ]
+}

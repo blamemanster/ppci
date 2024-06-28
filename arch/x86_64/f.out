@@ -1,0 +1,85 @@
+{
+  "arch": "x86_64",
+  "images": [],
+  "relocations": [
+    {
+      "addend": "-0x4",
+      "offset": "0x25",
+      "section": "code",
+      "symbol_id": 2,
+      "type": "rel32"
+    },
+    {
+      "addend": "-0x4",
+      "offset": "0x30",
+      "section": "code",
+      "symbol_id": 4,
+      "type": "rel32"
+    }
+  ],
+  "sections": [
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": "",
+      "name": "data"
+    },
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": [
+        "55488bec4881ec180000005340b80a000000408945fc408b45fc40bb0500",
+        "00004039d80f8f0000000040b800000000e900000000408b45fc40bb1400",
+        "00004003c3408945f8408b45f8408b45fc5b4881c4180000005dc3"
+      ],
+      "name": "code"
+    }
+  ],
+  "symbols": [
+    {
+      "binding": "global",
+      "id": 0,
+      "name": "main",
+      "section": "code",
+      "size": 0,
+      "typ": "func",
+      "value": "0x0"
+    },
+    {
+      "binding": "local",
+      "id": 1,
+      "name": "main_block0",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0xc"
+    },
+    {
+      "binding": "local",
+      "id": 2,
+      "name": "main_block2",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x34"
+    },
+    {
+      "binding": "local",
+      "id": 3,
+      "name": "main_block1",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x29"
+    },
+    {
+      "binding": "local",
+      "id": 4,
+      "name": "main_epilog",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x4d"
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+;-------------------------------------
+;-----算术逻辑类
+;-------------------------------------
+;--- 累加器、算术和逻辑说明
+; ABS                                                 1011 1110 0000 0000
+;ADD dma [, shift]                                   0010 shift 0 dma
+;ADD dma            0010 0000 0 dma
+;ADD dma,shift      0010 shift 0 dma
+;ADD dma, 16                                         0110 0001 0 dma
+ADD ind [, shift [, ARn]]                           0010 shift 1 ARU N NAR
+ADD ind, 16 [, ARn]                                 0110 0001 1 ARU N NAR
+; ADD #k                                              1011 1000 K
+;ADD #lk [, shift]                                   1011 1111 1001 shift
+; ADD #lk                                             1011 1111 1001 0000
+; ADD #lk, shift                                      1011 1111 1001 shift
+;ADDC dma                                            0110 0000 0 dma
+ADDC ind [, ARn]                                    0110 0000 1 ARU N NAR
+;ADDS dma                                            0110 0010 0 dma
+ADDS ind [, ARn]                                    0110 0010 1 ARU N NAR
+;ADDT dma                                            0110 0011 0 dma
+ADDT ind [, ARn]                                    0110 0011 1 ARU N NAR
+; ADRK #k                                             0111 1000 K
+;AND dma                                             0110 1110 0 dma
+AND ind [, ARn]                                     0110 1110 1 ARU N NAR
+
+; AND #lk [, shift]                                   1011 1111 1011 shift
+; AND #lk                                             1011 1111 1011 0000
+; AND #lk,shift                                       1011 1111 1011 shift
+
+;AND #lk, 16                                         1011 1110 1000 0001
+;CMPL                                                1011 1110 0000 0001
+
+;LACC dma [, shift]                                  0001 shift 0 dma
+;LACC dma           0001 0000 0 dma
+;LACC dma,shift     0001 shift 0 dma
+
+;LACC dma, 16                                        0110 1010 0 dma
+LACC ind [, shift [, ARn]]                          0001 shift 1 ARU N NAR
+LACC ind, 16[, ARn]                                 0110 1010 1 ARU N NAR
+
+; LACC #lk                                            1011 1111 1000 0000
+; LACC #lk,shift                                      1011 1111 1000 shift
+
+;LACL dma                                            0110 1001 0 dma
+LACL ind [, ARn]                                    0110 1001 1 ARU N NAR
+; LACL #k                                             1011 1001 k
+;LACT dma                                            0110 1011 0 dma
+LACT ind [, ARn]                                    0110 1011 1 ARU N NAR
+NEG                                                 1011 1110 0000 0010
+NORM ind                                            1010 0000 1 ARU N NAR
+;OR dma                                              0110 1101 0 dma
+OR ind [, ARn]                                      0110 1101 1 ARU N NAR
+
+; OR #lk                                              1011 1111 1100 0000
+; OR #lk,shift                                        1011 1111 1100 shift
+
+;OR #lk, 16                                          1011 1110 1000 0010
+;ROL                                                 1011 1110 0000 1100
+;ROR                                                 1011 1110 0000 1101
+SACH dma [, shift2 ]                                1001 1 shift2 0 dma
+SACH ind [, shift2 [, ARn]]                         1001 1 shift2 1 ARU N NAR
+SACL dma [, shift2 ]                                1001 0 shift2 0 dma
+SACL ind [, shift2 [, ARn]]                         1001 0 shift2 1 ARU N NAR
+;SFL                                                 1011 1110 0000 1001
+;SFR                                                 1011 1110 0000 1010
+
+SUB dma                                             0011 0000 0 dma
+SUB dma,shift                                       0011 shift 0 dma
+
+;SUB dma, 16                                         0110 0101 0 dma
+SUB ind [, shift [, ARn]]                           0011 shift 1 ARU N NAR
+SUB ind,16 [, ARn]                                  0110 0101 1 ARU N NAR
+; SUB #k                                              1011 1010 k
+
+; SUB #lk                                             1011 1111 1010 0000
+; SUB #lk.shift                                       1011 1111 1010 shift
+
+;SUBB dma                                            0110 0100 0 dma
+SUBB ind [, ARn]                                    0110 0100 1 ARU N NAR
+SUBB ind                                          0110 0100 1 ARU 0000
+SUBB ind, ARn                                     0110 0100 1 ARU 1 NAR
+;SUBC dma                                            0000 1010 0 dma
+SUBC ind [, ARn]                                    0000 1010 1 ARU N NAR
+
+;SUBS dma                                            0110 0110 0 dma
+SUBS ind [, ARn]                                    0110 0110 1 ARU N NAR
+;SUBT dma                                            0110 0111 0 dma
+SUBT ind [, ARn]                                    0110 0111 1 ARU N NAR
+;XOR dma                                             0110 1100 0 dma
+XOR ind [, ARn]                                     0110 1100 1 ARU N NAR
+
+
+; XOR #lk                                             1011 1111 1101 0000
+; XOR #lk,shift                                       1011 1111 1101 shift
+
+;XOR #lk, 16                                         1011 1110 1000 0011
+;ZALR dma                                            0110 1000 0 dma
+ZALR ind [, ARn]                                    0110 1000 1 ARU N NAR
+
+
+
+;--TREG、PREG和乘法指令
+;APAC                                                1011 1110 0000 0100
+;LPH dma                                             0111 0101 0 dma
+LPH ind [, ARn]                                     0111 0101 1 ARU N NAR
+
+;LT dma                                              0111 0011 0 dma
+;LTA dma                                             0111 0000 0 dma
+LTA ind [, ARn]                                     0111 0000 1 ARU N NAR
+;LTD dma                                             0111 0010 0 dma
+LTD ind [, ARn]                                     0111 0010 1 ARU N NAR
+;LTP dma                                             0111 0001 0 dma
+LTP ind [, ARn]                                     0111 0001 1 ARU N NAR
+;LTS dma                                             0111 0100 0 dma
+LTS ind [, ARn]                                     0111 0100 1 ARU N NAR
+MAC pma, dma                                        1010 0010 0 dma
+MAC pma, ind [, ARn]                                1010 0010 1 ARU N NAR
+MACD pma, dma                                       1010 0011 0 dma
+MACD pma, ind [, ARn]                               1010 0011 1 ARU N NAR
+
+;MPY dma                                             0101 0100 0 dma
+MPY ind [, ARn]                                     0101 0100 1 ARU N NAR
+MPY #k                                              110 k
+;MPYA dma                                            0101 0000 0 dma
+MPYA ind [, ARn]                                    0101 0000 1 ARU N NAR
+;MPYS dma                                            0101 0001 0 dma
+MPYS ind [, ARn]                                    0101 0001 1 ARU N NAR
+;MPYU dma                                            0101 0101 0 dma
+MPYU ind [, ARn]                                    0101 0101 1 ARU N NAR
+;PAC                                                 1011 1110 0000 0011
+;SPAC                                                1011 1110 0000 0101
+;SPH dma                                             1000 1101 0 dma
+SPH ind [, ARn]                                     1000 1101 1 ARU N NAR
+;SPL dma                                             1000 1100 0 dma
+SPL ind [, ARn]                                     1000 1100 1 ARU N NAR
+SPM constant                                        1011 1111 0000 00 constant
+;SQRA dma                                            0101 0010 0 dma
+SQRA ind [, ARn]                                    0101 0010 1 ARU N NAR
+;SQRS dma                                            0101 0011 0 dma
+SQRS ind [, ARn]                                    0101 0011 1 ARU N NAR
+
+
+
+
+
+;-------------------------------------
+;-----辅助类
+;-------------------------------------
+ADRK #k                                             0111 1000 K
+BANZ pma [, ind [, ARn]]                            0111 1011 1 ARU N NAR
+CMPR CM                                             1011 1111 0100 01 CM
+LAR ARx, dma                                        0000 0 X 0 dma
+LAR ARx, ind [, ARn]                                0000 0 X 1 ARU N NAR
+LAR ARx, #k                                         1011 0 X k
+LAR ARx, #lk                                        1011 1111 0000 0 X
+;MAR dma                                             1000 1011 0 dma
+MAR ind [, ARn]                                     1000 1011 1 ARU N NAR
+SAR ARx, dma                                        1000 0 x 0 dma
+SAR ARx, ind [, ARn]                                1000 0 x 0 ARU N NAR
+
+SBRK #k                                             0111 1100 k
+
+
+
+;-------------------------------------
+;-----跳转/转移类
+;-------------------------------------
+B pma [, ind [, ARn]]                               0111 1001 1 ARU N NAR
+;BACC                                                1011 1110 0010 0000
+BANZ pma [, ind [, ARn]]                            0111 1011 1 ARU N NAR
+BCND pma, cond 1 [,cond 2] [,...]                   1110 00 TP ZLVC ZLVC
+;CALA                                                1011 1110 0011 0000
+CALL pma [, ind [, ARn]]                            0111 1010 1 ARU N NAR
+CC pma, cond 1 [,cond 2] [,...]                     1110 10 TP ZLVC ZLVC
+INTR K                                              1011 1110 011 K
+;NMI                                                 1011 1110 0101 0010
+;RET                                                 1110 1111 0000 0000
+
+
+
+
+;-------------------------------------
+;-----控制类
+;-------------------------------------
+BIT dma, bit code                                   0100 bitcode 0 dma
+BIT ind, bit code [, ARn]                           0100 bitcode 1 ARU N NAR
+;BITT dma                                            0110 1111 0 dma
+BITT ind [, ARn]                                    0110 1111 1 ARU N NAR
+
+; CLRC C                                              1011 1110 0100 1110
+; CLRC CNF                                            1011 1110 0100 0100
+; CLRC INTM                                           1011 1110 0100 0000
+; CLRC OVM                                            1011 1110 0100 0010
+; CLRC SXM                                            1011 1110 0100 0110
+; CLRC TC                                             1011 1110 0100 1010
+; CLRC XF                                             1011 1110 0100 1100
+; IDLE                                                1011 1110 0010 0010
+;LDP dma                                             0000 1101 0 dma
+LDP ind [, ARn]                                     0000 1101 1 ARU N NAR
+LDP #k                                              1011 110 k
+
+LST #0, dma                                         0000 1110 0 dma
+LST #1, dma                                         0000 1111 0 dma
+LST #0, ind [, ARn]                                 0000 1110 1 ARU N NAR
+LST #1, ind [, ARn]                                 0000 1111 1 ARU N NAR
+; NOP                                                 1000 1011 0000 0000
+; POP                                                 1011 1110 0011 0010
+
+;POPD dma                                            1000 1010 0 dma
+POPD ind [, ARn]                                    1000 1010 1 ARU N NAR
+;PSHD dma                                            0111 0110 0 dma
+PSHD ind [, ARn]                                    0111 0110 1 ARU N NAR
+; PUSH                                                1011 1110 0011 1100
+;RPT dma                                             0000 1011 0 dma
+RPT ind [, ARn]                                     0000 1011 1 ARU N NAR
+RPT #k                                              1011 1011 k
+
+; SETC C                                              1011 1110 0100 1111
+; SETC CNF                                            1011 1110 0100 0101
+; SETC INTM                                           1011 1110 0010 0001
+; SETC OVM                                            1011 1110 0100 0011
+; SETC SXM                                            1011 1110 0100 0111
+; SETC TC                                             1011 1110 0100 1011
+; SETC XF                                             1011 1110 0100 1101
+SPM constant                                        1011 1111 0000 00 constant
+SST #0, dma                                         1000 1110 0 dma
+SST #1, dma                                         1000 1111 0 dma
+SST #0, ind [, ARn]                                 1000 1110 1 ARU N NAR
+SST #1, ind [, ARn]                                 1000 1111 1 ARU N NAR
+
+
+;-------------------------------------
+;-----I/O类和存储指令
+;-------------------------------------
+BLDD #lk, dma                                       1010 1000 0 dma
+BLDD #lk, ind [, ARn]                               1010 1000 1 ARU N NAR
+BLDD dma, #lk                                       1010 1001 0 dma
+BLDD ind, #lk [, ARn]                               1010 1001 1 ARU N NAR
+BLPD #pma, dma                                      1010 0101 0 dma
+BLPD #pma, ind [, ARn]                              1010 0101 1 ARU N NAR
+
+;DMOV dma                                            0111 0111 0 dma
+DMOV ind [, ARn]                                    0111 0111 1 ARU N NAR
+IN dma, PA                                          1010 1111 0 dma
+IN ind, PA [, ARn]                                  1010 1111 1 ARU N NAR
+OUT dma, PA                                         0000 1100 0 dma
+OUT ind, PA [, ARn]                                 0000 1100 1 ARU N NAR
+SPLK #lk, dma                                       1010 1110 0 dma
+SPLK #lk, ind [, ARn]                               1010 1110 1 ARU N NAR
+;TBLR dma                                            1010 0110 0 dma
+TBLR ind [, ARn]                                    1010 0110 1 ARU N NAR
+;TBLW dma                                            1010 0111 0 dma
+TBLW ind [, ARn]                                    1010 0111 1 ARU N NAR
+
+
+@isa.pattern("reg", "src16", size=4, cycles=1, energy=1)
+def pattern_fill_reg16(context, tree, c0):
+    dst = context.new_reg(c240xRegister)
+    c0 = AR0
+    print("****=", c0, dst)
+    print("tree.value=",tree.value)
+    # context.emit(SARi(c0, RegDst(dst)))
+    context.emit(SARi(RegSrc(c0), RegDst(dst)))
+    return dst
+    # pass
+
+@isa.pattern("reg", "SUBI16(reg, src16)", size=4)
+@isa.pattern("reg", "SUBU16(reg, src16)", size=4)
+def pattern_sub16(context, tree, c0, c1):
+    d = context.new_reg(c240xRegister)
+    context.emit(mov(c0, d))
+    print("1336=", c1)
+    context.emit(Sub_k(c1))
+    return d
+
+@isa.pattern("src8", "reg", size=0, cycles=0, energy=0)
+@isa.pattern("src16", "reg", size=0, cycles=0, energy=0)
+def pattern_reg_src(context, tree, c0):
+    print("adadadaad")
+    return RegSrc(c0)
+
+@isa.pattern("stm", "STRI16(memdst, src16)", size=2)
+@isa.pattern("stm", "STRU16(memdst, src16)", size=2)
+def pattern_str16(context, tree, c0, c1):
+    print("1401=",c0,c1)
+    context.emit(SARi(c1, c0))
+
+@isa.pattern("reg", "src16", size=4, cycles=1, energy=1)
+def pattern_fill_reg16(context, tree, c0):
+    dst = context.new_reg(c240xRegister)
+    c0 = AR0
+    print("****=", c0, dst)
+    print("tree.value=",tree.value)
+    # context.emit(SARi(c0, RegDst(dst)))
+    context.emit(SARi(RegSrc(c0), RegDst(dst)))
+    return dst
+    # pass

@@ -1,0 +1,19 @@
+section data
+section data
+section code
+global main
+type main func
+ALIGN(2)
+main:
+popd *,AR0
+main_block0:
+sar AR0, *+
+sar AR0, *-
+add 2
+sar PC, *-
+sar ST0, *+
+sar ST0, *-
+sar AR1, *-
+b ST1, *-, ST1
+main_epilog:
+sbrk #3

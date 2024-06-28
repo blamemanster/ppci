@@ -1,0 +1,52 @@
+{
+  "arch": "riscv",
+  "images": [],
+  "relocations": [],
+  "sections": [
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": "",
+      "name": "data"
+    },
+    {
+      "address": "0x0",
+      "alignment": "0x4",
+      "data": [
+        "130101ff232211002320810013048100130101ff23269100930460012322",
+        "9400832444009384b40023229400032544006f0000008324c10013010101",
+        "83204100032401001301010167800000"
+      ],
+      "name": "code"
+    }
+  ],
+  "symbols": [
+    {
+      "binding": "global",
+      "id": 0,
+      "name": "main",
+      "section": "code",
+      "size": 0,
+      "typ": "func",
+      "value": "0x0"
+    },
+    {
+      "binding": "local",
+      "id": 1,
+      "name": "main_block0",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x18"
+    },
+    {
+      "binding": "local",
+      "id": 2,
+      "name": "main_epilog",
+      "section": "code",
+      "size": 0,
+      "typ": "object",
+      "value": "0x34"
+    }
+  ]
+}

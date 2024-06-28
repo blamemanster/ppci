@@ -1,0 +1,5 @@
+       section data
+       section data
+       section code
+       global main
+       type main func
